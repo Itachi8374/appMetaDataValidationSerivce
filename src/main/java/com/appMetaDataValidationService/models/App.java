@@ -1,27 +1,38 @@
 package com.appMetaDataValidationService.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 import java.util.UUID;
 
 @Entity
 public class App {
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
-    private UUID appID;
+    @GeneratedValue(generator = "app-sequence-generator")
+    @GenericGenerator(
+            name = "app-sequence-generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "app-sequence_name", value = "app_sequence"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    @Column(updatable = false, nullable = false)
+    private Long appID;
     private String appName;
+    private String appBundleID;
 
-    public UUID getAppID() {
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
+
+    public Long getAppID() {
         return appID;
     }
 
-    public void setAppID(UUID appID) {
+    public void setAppID(Long appID) {
         this.appID = appID;
     }
 
@@ -41,5 +52,11 @@ public class App {
         this.appBundleID = appBundleID;
     }
 
-    private String appBundleID;
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
 }

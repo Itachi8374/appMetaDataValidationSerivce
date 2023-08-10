@@ -1,34 +1,42 @@
 package com.appMetaDataValidationService.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import org.hibernate.annotations.GeneratorType;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
-import java.util.UUID;
+import java.util.List;
 
 @Entity
 public class Publisher {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 36, columnDefinition = "varchar", updatable = false, nullable = false)
-    private UUID publisherId;
+    @GeneratedValue(generator = "sequence-generator")
+    @GenericGenerator(
+            name = "sequence-generator",
+            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
+            parameters = {
+                    @Parameter(name = "sequence_name", value = "user_sequence"),
+                    @Parameter(name = "initial_value", value = "1"),
+                    @Parameter(name = "increment_size", value = "1")
+            }
+    )
+    @Column(updatable = false, nullable = false)
+    private long publisherId;
     private String publisherFirstName;
     private String publisherLastName;
+
+    @OneToMany(mappedBy = "publisher")
+    private List<App> apps;
 
     public Publisher(){
 
     }
 
-    public UUID getPublisherId() {
+    public long getPublisherId() {
         return publisherId;
     }
 
-    public void setPublisherId(UUID publisherId) {
+    public void setPublisherId(Long publisherId) {
         this.publisherId = publisherId;
     }
 

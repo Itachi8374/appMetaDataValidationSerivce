@@ -1,13 +1,12 @@
 package com.appMetaDataValidationService.services;
 
 import com.appMetaDataValidationService.models.Publisher;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.UUID;
+import java.util.Optional;
 
 public interface PublisherService {
     public List<Publisher> getPublishers();
-    public Publisher getPublisherById(UUID id);
-    public ResponseEntity registerPublisher(Publisher publisher);
+    public Optional<Publisher> getPublisherById(Long id);
+    public Publisher registerPublisher(Publisher publisher);
 }
