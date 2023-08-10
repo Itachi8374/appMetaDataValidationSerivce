@@ -1,16 +1,13 @@
 package com.appMetaDataValidationService.controllers;
 
-import com.appMetaDataValidationService.RequestBody.AppRequest;
+import com.appMetaDataValidationService.requestBody.AppRequest;
 import com.appMetaDataValidationService.models.App;
-import com.appMetaDataValidationService.repositories.AppRepository;
 import com.appMetaDataValidationService.services.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/app/")

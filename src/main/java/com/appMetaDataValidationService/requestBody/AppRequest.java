@@ -1,4 +1,4 @@
-package com.appMetaDataValidationService.RequestBody;
+package com.appMetaDataValidationService.requestBody;
 
 public class AppRequest {
 

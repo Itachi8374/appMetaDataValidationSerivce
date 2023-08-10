@@ -1,6 +1,6 @@
 package com.appMetaDataValidationService.services;
 
-import com.appMetaDataValidationService.RequestBody.AppRequest;
+import com.appMetaDataValidationService.requestBody.AppRequest;
 import com.appMetaDataValidationService.models.App;
 import org.springframework.http.ResponseEntity;
 
