@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 
 public class BundleIDValidator {
     public String bundleIdValidator(String appBundleId){
-        String URL = "http://localhost:8081/";
+        String URL = "http://flask-app:8081/";
         String requestBody = "{\"app_id\":" + "\"" + appBundleId + "\"}";
 
         try{

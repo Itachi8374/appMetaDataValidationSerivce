@@ -49,29 +49,24 @@ public class AppServiceImpl implements AppService {
     @Override
     public ResponseEntity addNewApp(AppRequest appRequest) {
         //Check If Publisher Exists
-//        Optional <Publisher> publisher = publisherRepository.findById(appRequest.getPublisherId());
-//        if(publisher.isPresent()){
-//            BundleIDValidator validator = new BundleIDValidator();
-//            String validatorString = validator.bundleIdValidator(appRequest.getAppBundleId());
-//            if(validatorString != ""){
-//                App newApp = new App();
-//                newApp.setAppBundleID(appRequest.getAppBundleId());
-//                newApp.setAppName(appRequest.getAppName());
-//                newApp.setPublisher(publisher.get());
-//
-//                appRepository.save(newApp);
-//                return new ResponseEntity<String>(validatorString, HttpStatus.CREATED);
-//            }else{
-//                return new ResponseEntity("Invalid Bundle ID", HttpStatus.BAD_REQUEST);
-//            }
-//
-//        }else{
-//            return new ResponseEntity<String>("Publisher Not Registered", HttpStatus.UNAUTHORIZED);
-//        }
-        App newApp = new App();
-        newApp.setAppName(appRequest.getAppName());
-        newApp.setAppBundleID(appRequest.getAppBundleId());
-        appRepository.save(newApp);
-        return new ResponseEntity<String>("Created on test branch", HttpStatus.CREATED);
+        Optional <Publisher> publisher = publisherRepository.findById(appRequest.getPublisherId());
+        if(publisher.isPresent()){
+            BundleIDValidator validator = new BundleIDValidator();
+            String validatorString = validator.bundleIdValidator(appRequest.getAppBundleId());
+            if(validatorString != ""){
+                App newApp = new App();
+                newApp.setAppBundleID(appRequest.getAppBundleId());
+                newApp.setAppName(appRequest.getAppName());
+                newApp.setPublisher(publisher.get());
+
+                appRepository.save(newApp);
+                return new ResponseEntity<String>(validatorString, HttpStatus.CREATED);
+            }else{
+                return new ResponseEntity("Invalid Bundle ID", HttpStatus.BAD_REQUEST);
+            }
+
+        }else{
+            return new ResponseEntity<String>("Publisher Not Registered", HttpStatus.UNAUTHORIZED);
+        }
     }
 }
