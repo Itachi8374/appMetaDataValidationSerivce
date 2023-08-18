@@ -6,6 +6,8 @@ import com.appMetaDataValidationService.models.App;
 import com.appMetaDataValidationService.models.Publisher;
 import com.appMetaDataValidationService.repositories.AppRepository;
 import com.appMetaDataValidationService.repositories.PublisherRepository;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +21,13 @@ public class AppServiceImpl implements AppService {
 
     private final AppRepository appRepository;
     private final PublisherRepository publisherRepository;
+    private final AzureBlobStorageService azureBlobStorageService;
 
     @Autowired
-    public AppServiceImpl(AppRepository appRepository, PublisherRepository publisherRepository){
+    public AppServiceImpl(AppRepository appRepository, PublisherRepository publisherRepository, AzureBlobStorageService azureBlobStorageService){
         this.appRepository = appRepository;
         this.publisherRepository = publisherRepository;
+        this.azureBlobStorageService = azureBlobStorageService;
     }
 
     @Override
@@ -60,6 +64,7 @@ public class AppServiceImpl implements AppService {
                 newApp.setPublisher(publisher.get());
 
                 appRepository.save(newApp);
+                azureBlobStorageService.uploadFileLocally();
                 return new ResponseEntity<String>(validatorString, HttpStatus.CREATED);
             }else{
                 return new ResponseEntity("Invalid Bundle ID", HttpStatus.BAD_REQUEST);

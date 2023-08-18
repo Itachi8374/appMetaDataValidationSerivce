@@ -1,4 +1,5 @@
 package com.appMetaDataValidationService.helper;
+import com.appMetaDataValidationService.services.AzureBlobStorageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,8 +11,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 public class BundleIDValidator {
+
     public String bundleIdValidator(String appBundleId){
         String URL  = "http://localhost:8081/";
         //String URL = "http://flask-app:8081/";
@@ -52,6 +56,7 @@ public class BundleIDValidator {
                 String filteredMetadata = jsonParser.responseParser(response.toString());
 
                 log.info(filteredMetadata);
+
                 return response.toString();
             }
         }catch (MalformedURLException Me){

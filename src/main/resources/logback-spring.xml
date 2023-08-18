@@ -33,7 +33,7 @@
     </root>
 
 
-    <logger name="com.appMetaDataValidationService" level="trace" additivity="false">
+    <logger name="com.appMetaDataValidationService.helper.BundleIDValidator" level="info" additivity="false">
         <appender-ref ref="RollingFile" />
     </logger>
 
