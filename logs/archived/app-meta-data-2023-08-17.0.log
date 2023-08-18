@@ -1,0 +1,6 @@
+
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 21276 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.264 seconds (process running for 2.481)
+{appId='com.Rohit.IndianBikes', date='2023-08-17', time='10:41:47 pm', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.089347, released='Dec 28, 2020', realInstalls=97799502, ratings=778369, reviews=682, minInstalls=50000000, genreId='GAME_SIMULATION'}

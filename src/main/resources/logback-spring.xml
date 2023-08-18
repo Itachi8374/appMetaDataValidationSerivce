@@ -5,6 +5,7 @@
     <property name="LOGS_FILE" value="app-meta-data.log"></property>
 
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <file>${LOGS_FOLDER}/console-logs.log</file>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
                 %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
@@ -19,7 +20,6 @@
         </encoder>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
             <fileNamePattern>${LOGS_FOLDER}/archived/app-meta-data-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -28,40 +28,15 @@
         </rollingPolicy>
     </appender>
 
-
-    <appender name="SevereRollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS_FOLDER}/severe-logger.log</file>
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>WARN</level>
-        </filter>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d %p [%t] %m%n</Pattern>
-        </encoder>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
-            <fileNamePattern>${LOGS_FOLDER}/archived/severe-logger-%d{yyyy-MM-dd}.%i.log
-            </fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>10MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
-    </appender>
-
-    <!-- LOG everything at INFO level -->
     <root level="info">
         <appender-ref ref="Console" />
     </root>
 
-    <logger name="com.appMetaDataValidationService" level="info" additivity="false">
-        <appender-ref ref="SevereRollingFile" />
+
+    <logger name="com.appMetaDataValidationService" level="trace" additivity="false">
+        <appender-ref ref="RollingFile" />
     </logger>
 
-    <logger name="com.appMetaDataValidationService.helper.BundleIDValidator" level="trace" additivity="false">
-        <appender-ref ref="SevereRollingFile" />
-        <appender-ref ref="RollingFile" />
-        <appender-ref ref="Console" />
-    </logger>
 
 
 </configuration>

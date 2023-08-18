@@ -1,5 +1,28 @@
-2023-08-17 19:18:16,879 INFO [http-nio-8080-exec-9] Metadata{appId='com.Rohit.IndianBikes', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.103806, released='Dec 28, 2020', realInstalls=9.7799502E7, ratings=777820, reviews=680, minInstalls=50000000, genreId='GAME_SIMULATION'}
-Metadata{appId='com.Rohit.IndianBikes', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.0931034, released='Dec 28, 2020', realInstalls=9.7799502E7, ratings=778020, reviews=680, minInstalls=50000000, genreId='GAME_SIMULATION'}
-Metadata{appId='com.Rohit.IndianBikes', date='2023-08-17', time=' 8:09:05 pm', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.0931034, released='Dec 28, 2020', realInstalls=9.7799502E7, ratings=777996, reviews=680, minInstalls=50000000, genreId='GAME_SIMULATION'}
-Metadata{appId='com.Rohit.IndianBikes', date='2023-08-17', time=' 8:18:26 pm', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.0931034, released='Dec 28, 2020', realInstalls=9.7799502E7, ratings=777996, reviews=680, minInstalls=50000000, genreId='GAME_SIMULATION'}
-{appId='com.Rohit.IndianBikes', date='2023-08-17', time='8:20 pm', url='https://play.google.com/store/apps/details?id=com.Rohit.IndianBikes&hl=en&gl=us', title='Indian Bikes Driving 3D', summary='Play the Most Realistic Indian Bikes Driving Game', score=4.0931034, released='Dec 28, 2020', realInstalls=97799502, ratings=777995, reviews=680, minInstalls=50000000, genreId='GAME_SIMULATION'}
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 31267 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.358 seconds (process running for 2.608)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 31881 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.248 seconds (process running for 2.449)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 32084 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.169 seconds (process running for 2.373)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 32145 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.397 seconds (process running for 2.601)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 32320 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.225 seconds (process running for 2.443)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 32406 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.184 seconds (process running for 2.386)
+Starting AppMetaDataValidationServiceApplication using Java 17.0.7 with PID 32463 (/Users/tanay.maheshwari/appMetaDataValidationService/target/classes started by tanay.maheshwari in /Users/tanay.maheshwari/appMetaDataValidationService)
+Running with Spring Boot v3.1.2, Spring v6.0.11
+No active profile set, falling back to 1 default profile: "default"
+Started AppMetaDataValidationServiceApplication in 2.204 seconds (process running for 2.43)
